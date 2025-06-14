@@ -12,11 +12,23 @@ def submit():
     username=request.form.get("username")
     password=request.form.get("password")
 
-    if username=="aditya" and password=="321":
+    # Pair of usernames their Passwords
+
+    valid_users={
+        #  Username : Password
+         'aditya':'939',
+         'pratibha':'630',
+         'mohan':'855'
+     }
+    
+    
+
+
+
+    if username in valid_users and password==valid_users[username]:
         return render_template("welcome.html",name=username)
     else:
         return "Invalid credentials"
-
 
 
 # Running the app
